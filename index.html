@@ -47,3 +47,35 @@ nada de estos lenguajes. Si quieres aprender luego, te recomendamos ver lo sigui
     // Para eso, utiliza script src dentro del head.
   </script>
 </html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confeti Example</title>
+</head>
+<body>
+  <button id="confettiButton">¡Activar Confeti!</button>
+  
+  <script src="node_modules/confetti-js/dist/index.min.js"></script>
+  <script>
+    var confettiButton = document.getElementById('confettiButton');
+    
+    confettiButton.addEventListener('click', function() {
+      var confettiSettings = {
+        target: 'confettiContainer',
+        max: 150,
+        size: 1,
+        animate: true,
+        props: ['circle', 'square', 'triangle', 'line'],
+        colors: [[165,104,246],[230,61,135],[0,199,228],[253,214,126]],
+        clock: 25
+      };
+      var confetti = new ConfettiGenerator(confettiSettings);
+      confetti.render();
+    });
+  </script>
+</body>
+</html>
